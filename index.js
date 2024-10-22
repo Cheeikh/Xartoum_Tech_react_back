@@ -29,7 +29,7 @@ dbConnection();
 app.use(helmet());
 
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://frontend-app-rz13.onrender.com", "https://xartoum-tech-react-nada4tyiv-cheeikhs-projects.vercel.app"], // Autoriser plusieurs origines
+  origin: ["http://localhost:3000", "https://frontend-app-rz13.onrender.com", "https://xartoum-tech-react-nada4tyiv-cheeikhs-projects.vercel.app","https://xartoum-tech.netlify.app"], // Autoriser plusieurs origines
   credentials: true, // Autoriser les credentials (cookies, headers d'authentification, etc.)
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Méthodes HTTP autorisées
   allowedHeaders: "Content-Type, Authorization", // En-têtes autorisés
