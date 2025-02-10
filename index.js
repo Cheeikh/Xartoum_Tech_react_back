@@ -29,10 +29,10 @@ dbConnection();
 app.use(helmet());
 
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://frontend-app-rz13.onrender.com", "https://xartoum-tech-react-nada4tyiv-cheeikhs-projects.vercel.app","https://xartoum-tech.netlify.app"], // Autoriser plusieurs origines
+  origin: '*', // Accepter toutes les origines
   credentials: true, // Autoriser les credentials (cookies, headers d'authentification, etc.)
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Méthodes HTTP autorisées
-  allowedHeaders: "Content-Type, Authorization", // En-têtes autorisés
+  methods: '*', // Autoriser toutes les méthodes HTTP
+  allowedHeaders: '*', // Autoriser tous les en-têtes
 };
 
 app.use(cors(corsOptions));
@@ -53,10 +53,10 @@ app.use(errorMiddleware);
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:3000", "https://frontend-app-rz13.onrender.com"],
+    origin: '*', // Accepter toutes les origines
     credentials: true,
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    methods: '*', // Accepter toutes les méthodes
+    allowedHeaders: '*', // Accepter tous les en-têtes
   }
 });
 
