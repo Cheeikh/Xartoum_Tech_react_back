@@ -20,7 +20,7 @@ export const sendVerificationEmail = async (user, res) => {
 
   const token = _id + uuidv4();
 
-  const link = "http://localhost:8800/users/verify/" + _id + "/" + token;
+  const link = "https://xartoum-tech-react-back.onrender.com/users/verify/" + _id + "/" + token;
 
   //   mail options
   const mailOptions = {
