@@ -45,7 +45,7 @@ export const verifyEmail = async (req, res) => {
                   Verification.findOneAndDelete({ userId }).then(() => {
                     const message = "Email verified successfully";
                     res.redirect(
-                      `/users/verified?status=success&message=${message}`
+                      `${process.env.FRONTEND_URL}/login`
                     );
                   });
                 })
