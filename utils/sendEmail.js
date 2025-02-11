@@ -83,7 +83,7 @@ export const resetPasswordLink = async (user, res) => {
   const { _id, email } = user;
 
   const token = _id + uuidv4();
-  const link = "http://localhost:8800/users/reset-password/" + _id + "/" + token;
+  const link = "https://xartoum-tech-react-back.onrender.com/users/reset-password/" + _id + "/" + token;
 
   //   mail options
   const mailOptions = {
