@@ -259,3 +259,25 @@ export const getComments = async (req, res) => {
     });
   }
 };
+
+export const getUserStories = async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    const stories = await Story.find({
+      user: userId,
+      expiresAt: { $gt: new Date() } // Ne récupère que les stories non expirées
+    }).populate("user", "firstName lastName profileUrl");
+
+    res.status(200).json({
+      success: true,
+      stories: stories,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Erreur lors de la récupération des stories de l'utilisateur",
+      error: error.message,
+    });
+  }
+};
